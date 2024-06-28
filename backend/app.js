@@ -58,8 +58,44 @@ yargs.command({
         }
     },                                             // <--- description of what it does(optional)
     handler: (argv) =>  notes.readNote(argv.title)                                                       // <--- code that will run when the command is pressed
-}
-)
+})
+
+yargs.command({
+    command:'editnote',
+    describe:'edit a note',
+    builder:{
+        title: {
+            type:'string',
+            demandOption: true,
+            describe:'title'
+    },
+        editbody: {
+            type:'string',
+            demandOption: true,
+            describe:'new body'
+        }
+    },
+    handler: (argv) => notes.editNote(argv.title, argv.editbody)
+})
+
+
+yargs.command({
+    command:'edittitle',
+    describe:'Edit a note title',
+    builder:{
+        title:{
+            type:'string',
+            demandOption:true,
+            describe:'old title'
+        },
+        edittitle: {
+            type:'string',
+            demandOption: true,
+            decribe:'new title'
+        }
+    },
+    handler:(argv) => notes.edittitle(argv.title, argv.edittitle)
+})
 // ye karna zaroori h 
 yargs.parse()
 

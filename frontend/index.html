@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Note App</h1>
+        <div class="form-group">
+            <input type="text" id="noteTitle" placeholder="Title">
+            <textarea id="noteBody" placeholder="Body"></textarea>
+            <button onclick="addNote()">Add Note</button>
+        </div>
+        <div class="form-group">
+            <input type="text" id="editNoteTitle" placeholder="Edit Title">
+            <textarea id="editNoteBody" placeholder="Edit Body"></textarea>
+            <button onclick="editNote()">Edit Note</button>
+        </div>
+        <div class="notes-list">
+            <h2>Your Notes</h2>
+            <ul id="notesList"></ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
